@@ -1,0 +1,350 @@
+/*Start Variables */
+:root {
+  --header-txt-main-color: white;
+  --header-color: #111111d9;
+  --icon-color: #919d56;
+  --section-padding: 60px 0;
+  --line-height: 1.8;
+  --p-font-weight: 600;
+}
+/* End Variables */
+/* StartGlobal Rules */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 1400px;
+}
+/* End Global Rules */
+/* Start Components */
+.special-heading {
+  color: #d1d1d1;
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -3px;
+}
+.special-heading + p {
+  margin: -20px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 10px #d1d1d1, 0 0 10px #d1d1d1;
+}
+@media (min-width: 992px) {
+  .special-heading {
+    font-size: 80px;
+  }
+  .special-heading + p {
+    margin: -30px 0 0;
+    font-size: 25px;
+  }
+}
+/* End Components */
+/* Start Header */
+header {
+  background-color: var(--header-color);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .links {
+  position: relative;
+}
+header .container .links .icons {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+header .container .links .icons span {
+  background-color: var(--header-txt-main-color);
+  height: 2px;
+  margin-bottom: 5px;
+}
+header .container .links .icons span:first-child,
+header .container .links .icons span:last-child {
+  width: 100%;
+}
+header .container .links .icons span:nth-child(2) {
+  width: 60%;
+}
+header .container .links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 21px);
+  background-color: #171717d1;
+  width: 200px;
+  max-width: 50vw;
+  display: none;
+}
+/* A bridge between the icon and the ul, so that it won't close when hover */
+header .container .links ul::before {
+  content: "";
+  border: 15px solid transparent;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+header .container .links ul li:not(:last-child) {
+  border-bottom: 1px solid var(--header-txt-main-color);
+}
+header .container .links ul li a {
+  text-decoration: none;
+  color: var(--header-txt-main-color);
+  display: block;
+  padding: 15px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  width: 100%;
+  height: 100%;
+}
+header .container .links ul li a:hover {
+  margin-left: 15px;
+}
+header .container .links:hover ul {
+  display: block;
+}
+header .container .links:hover .icons span:nth-child(2) {
+  width: 100%;
+}
+/* End Header */
+
+/* Start Main */
+/* Start Platforms */
+.platforms {
+  background-image: url(../images/Platforms\ Image.png);
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: relative;
+}
+.platforms section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.platforms section h1,
+.platforms section p {
+  color: var(--header-txt-main-color);
+  text-shadow: 0 0 10px black, 0 0 10px black;
+}
+.platforms section h1 {
+  font-size: 50px;
+  margin: 0;
+}
+.platforms section p {
+  font-size: 20px;
+}
+.platforms section ul {
+  margin: 10% 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.platforms section ul li {
+  display: inline-block;
+}
+/* End Platforms */
+/* Start Maps */
+.maps {
+  padding: var(--section-padding);
+  min-height: 100vh;
+  background-image: linear-gradient(to top right, #69aba3, #3a6d74);
+  display: flex;
+  align-items: center;
+}
+.maps section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2%;
+}
+.maps section .map {
+  text-align: center;
+  padding: 20px;
+  color: #fef8c3;
+}
+.maps section .map i {
+  color: #ad3d3a;
+}
+.maps section .map h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.maps section .map p {
+  line-height: var(--line-height);
+  font-size: 17px;
+}
+/* End Maps */
+/* Start Characters */
+.characters {
+  padding: var(--section-padding);
+  min-height: 100vh;
+  background-image: linear-gradient(to top right, #3a6d74, #142655);
+}
+.characters section .chars {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-gap: 20px;
+}
+.characters section .chars > div:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.characters section .chars > div:not(:last-child) img {
+  width: 60px;
+  height: 60px;
+  margin: 0 calc(50% - 30px);
+}
+.characters section .chars .char-info h3 {
+  color: #f9faf8;
+}
+.characters section .chars .char-info p {
+  color: #a5b55d;
+  font-weight: var(--p-font-weight);
+  line-height: var(--line-height);
+}
+.characters section .chars .col:last-child {
+  position: relative;
+  margin: 0 calc(50% - 130px);
+  z-index: 0;
+  display: none;
+  text-align: center;
+}
+.characters section .chars .image {
+  text-align: center;
+}
+.characters section .chars .image img {
+  width: 260px;
+  height: 400px;
+}
+.characters section .chars .image::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -10%;
+  width: 100px;
+  height: 120%;
+  background-color: #a5b55d;
+  z-index: -1;
+}
+/* Display the image starting from medium size screens */
+@media (min-width: 992px) {
+  .characters section .chars .col:last-child {
+    display: block;
+  }
+}
+/* End Characters */
+/* Start Elements */
+.elements {
+  padding: var(--section-padding);
+  min-height: 100vh;
+  background-image: linear-gradient(to top right, #232b43, #070d1e);
+}
+.elements section .elements-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-gap: 50px;
+  margin-top: 10%;
+}
+.elements section .elements-cards > div {
+  background-color: #1c243a;
+}
+.elements section .elements-cards img {
+  margin: 0 calc(50% - 32px);
+  padding-top: 20px;
+}
+.elements section .elements-cards .card .info {
+  padding: 20px;
+}
+.elements section .elements-cards .card .info h3 {
+  margin: 0;
+  color: white;
+}
+.elements section .elements-cards .card .info p {
+  font-weight: var(--p-font-weight);
+  line-height: var(--line-height);
+  color: #a7b1c1;
+}
+/* End Elements */
+/* Start Contact */
+.contact {
+  padding: var(--section-padding);
+  background-color: #1d1f29;
+}
+.contact .info {
+  padding-top: 100px;
+  text-align: center;
+}
+.contact .info p {
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+}
+@media (min-width: 992px) {
+  .contact .info p {
+    font-size: 30px;
+  }
+}
+.contact .info i {
+  color: #d1d1d1;
+  margin: 0 10px;
+  transition-duration: 0.4s;
+}
+.contact .info i:hover {
+  color: white;
+}
+/* End Contact */
+/* End Main */
+
+/* Start Footer */
+footer {
+  background-color: #111111;
+}
+footer p {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: var(--p-font-weight);
+}
+@media (min-width: 992px) {
+  footer p {
+    font-size: 20px;
+    padding: 30px;
+  }
+}
+footer p span {
+  color: #ad3d3a;
+}
+/* End Footer */
